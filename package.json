@@ -1,0 +1,34 @@
+{
+  "name": "deshidwell",
+  "version": "1.0.0",
+  "description": "CSE309, Web Application, Rental Accommodation Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaziFabihaLiya/DeshiDwell.git"
+  },
+  "keywords": [
+    "system",
+    "mongodb",
+    "node.js",
+    "rental",
+    "accommodation",
+    "booking",
+    "html",
+    "css",
+    "express"
+  ],
+  "author": "Kazi Fabiha Golam Liya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KaziFabihaLiya/DeshiDwell/issues"
+  },
+  "homepage": "https://github.com/KaziFabihaLiya/DeshiDwell#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.0"
+  }
+}
