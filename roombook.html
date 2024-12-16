@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DeshiDwell </title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <!-- CSS file linked -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
+</head>
+<body>
+    <!-- start -->
+    <header class="header" id="header">
+        <div class="left-section">
+            <div class="logo">
+              <img src="../DeshiDwell/resources/image/logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="middle-section">
+            <nav class="navbar">
+                <a href="index.html" class="nav-link"><span>HOME</span></a>
+                <a href="#review" class="nav-link"><span>REVIEWS</span></a>
+                <a href="#about" class="nav-link"><span>ABOUT</span></a>
+            </nav>           
+        </div>
+        <div class="right-btn">
+            <div class="right-section">
+                <div class="user-icon">
+                    <img src="../DeshiDwell/resources/image/user.png" alt="User">
+                </div>
+                <div class="actions">
+                    <div class="user-menu">
+                      <button class="menu-button">☰</button>
+                      <div class="dropdown" id="dropdown">
+                        <ul>
+                          <li><a href="signup.html">Sign up</a></li>
+                          <li><a href="login.html">Log in</a></li>
+                          <li><a href="roombook.html">Reserve</a></li>
+                          <li><a href="roombook.html">Book Now</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1 class="hero-title">Cozy Private Room - In the Heart of Copenhagen</h1>
+            <div class="image-grid">
+                <img src="../DeshiDwell/resources/image/house3.jpg" alt="Living Room" class="main-image">
+                <img src="../DeshiDwell/resources/image/house.jpg" alt="Kitchen">
+                <img src="../DeshiDwell/resources/image/house2.jpg" alt="Entrance">
+                <img src="../DeshiDwell/resources/image/house3.jpg" alt="Bedroom">               
+            </div>
+        </div>
+    </section>
+    <section class="date-selection">
+        <div class="datecontainer">
+            <h2>Choose Your Dates</h2>
+            <div class="calendar">
+                <label for="check-in">Check-in:</label>
+                <input type="date" id="check-in" required>
+                <label for="check-out">Check-out:</label>
+                <input type="date" id="check-out" required>
+                <button id="update-dates-btn" class="btn-primary">Update Reservation</button>
+            </div>
+        </div>
+    </section>
+    <section class="room-container">
+        <!-- Room Details Section -->
+        <div class="room-details">
+            <div class="room-summary">
+                <h2>Room in Copenhagen, Denmark</h2>
+                <p>1 queen bed · Dedicated bathroom</p>
+            </div>
+            <div class="room-features">
+                <div class="feature">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <div>
+                        <h4>Room in a townhouse</h4>
+                        <p>Your own room in a home, plus access to shared spaces.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    
+                    <div>
+                        <h4>Self check-in</h4>
+                        <p>Check yourself in with the keypad.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <span class="icon"><i class="fa fa-close"></i></span>
+                    <div>
+                        <h4>Free cancellation before Apr 7</h4>
+                        <p>Get a full refund if you change your mind.</p>
+                    </div>
+                </div>
+            </div>
+            <section class="about-place">
+                <h3>About this place</h3>
+                <p>
+                    SANTIPHAP ROOM - is a spacious en-suite located on the top floor of the renovated
+                    40-year-old shophouse called "Ba hao". The room is a Thai-contemporary inspired, overlooking
+                    one of the most sacred "Trimit Temple" and a balcony with a little garden.
+                </p>
+            </section>
+        </div>
+    
+        <!-- Reservation Summary Section -->
+        <div class="reservation-summary">
+            <div class="price-summary card">
+                <h3 class="price">$666 <span class="night">/night</span></h3>
+                <div class="check-details">
+                    <div>
+                        <label>Check-in</label>
+                        <p>1/24/2025</p>
+                    </div>
+                    <div>
+                        <label>Check-out</label>
+                        <p>1/29/2025</p>
+                    </div>
+                    <div>
+                        <label>Guests</label>
+                        <p>1 guest</p>
+                    </div>
+                </div>
+                <div class="reservation-summary">
+                    <p><strong>$666 × 5 nights</strong> <span>$3,332</span></p>
+                    <p><strong>Cleaning fee</strong> <span>$120</span></p>
+                    <p><strong>Airbnb service fee</strong> <span>$487</span></p>
+                    <hr />
+                    <p><strong>Total before taxes    </strong> <span> $3,939</span></p>
+                </div>
+                <button class="btn-primary">Reserve</button>
+                <p class="notice">You won't be charged yet</p>
+            </div>
+        </div>
+    </section>
+    
+    
+<main class="roombook">
+    <section class="amenities-section">
+        <div class="amenity-container">
+            <h2>What this place offers</h2>
+            <div class="amenities-grid">
+                <div class="amenity">
+                    <i class="fas fa-water"></i> Lake view
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-swimming-pool"></i> Waterfront
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-wifi"></i> Wifi
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-car"></i> Free parking
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-video"></i> Exterior
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-mountain"></i> Mountain view
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-utensils"></i> Kitchen
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-laptop"></i> Dedicated workspace
+                </div>
+                <div class="amenity">
+                    <i class="fas fa-hot-tub"></i> Private hot tub
+                </div>
+                <div class="amenity crossed-out">
+                    <i class="fas fa-bell-slash"></i> Carbon monoxide alarm
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="reviews-section" id="review">
+        <div class="review-container">
+            <h2>Reviews</h2>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <img src="../DeshiDwell/resources/image/pic1.jpg" alt="Ryosuke" class="review-image">
+                    <div class="review-content">
+                        <h3>Ryosuke</h3>
+                        <p>1 year on Airbnb</p>
+                        <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed one night</p>
+                        <p>It was my first time to use it. There were no private houses around, so I didn't have to worry about noise, so I enjoyed music with speakers and conversations in the open-air bath...</p>
+                    </div>
+                </div>
+    
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <img src="../DeshiDwell/resources/image/pic2.jpg" alt="Keisuke" class="review-image">
+                    <div class="review-content">
+                        <h3>Keisuke</h3>
+                        <p>Koto City, Japan</p>
+                        <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed with kids</p>
+                        <p>It was a great sauna place to stay. You can enjoy the outdoor air bath with a view of the autumn foliage Lake Nojiri.</p>
+                    </div>
+                </div>
+    
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <img src="../DeshiDwell/resources/image/pic3.jpg" alt="Nagasawa" class="review-image">
+                    <div class="review-content">
+                        <h3>Nagasawa</h3>
+                        <p>Shinagawa City, Japan</p>
+                        <p class="review-meta">★ ★ ★ ★ ★ · 3 weeks ago · Group trip</p>
+                        <p>We had a great stay!</p>
+                    </div>
+                </div>
+    
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <img src="../DeshiDwell/resources/image/house.jpg" alt="Masa" class="review-image">
+                    <div class="review-content">
+                        <h3>Masa</h3>
+                        <p>3 years on Airbnb</p>
+                        <p class="review-meta">★ ★ ★ ★ ★ · 3 weeks ago · Stayed one night</p>
+                        <p>It was a private space with a stunning view. The kitchen window was large, so we had a stunning view from the room. It was easy to prepare the sauna while looking at the...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+    
+    
+    <section class="footer" id="foot">
+        <div class="box-container container">
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>Phone Number</h3>
+                <p>+123-456-8980</p>
+                <p>+880-156-8980</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Our Address</h3>
+                <p>Dhaka, Bangladesh</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3>Opening Hour</h3>
+                <p>10.00 AM - 8.00 PM</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-envelope-square"></i>
+                <h3>Email Address</h3>
+                <p>Kazifabiha20@gmail.com</p>
+                <p>Syedahad60@gmail.com</p>
+            </div>
+        </div>
+        <div class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>Kazi Fabiha Liya</span></div>
+    </section>
+        <script src="../DeshiDwell/resources/js/script.js" defer></script>
+    </body>
+    </html>

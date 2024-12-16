@@ -1,6 +1,10 @@
 let menu = document.querySelector('#menu-btn');
-let navlinks = document.querySelector('.headerfix .nav-links');
-let header = document.querySelector('.headerfix');
+// let navlinks = document.querySelector('.headerfix .nav-links');
+// let header = document.querySelector('.headerfix');
+document.querySelector('.menu-button').addEventListener('click', () => {
+    const userMenu = document.querySelector('.user-menu');
+    userMenu.classList.toggle('active');
+});
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
     navlinks.classList.toggle('active');
@@ -27,6 +31,30 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     
     alert('Login submitted! (Check console for values)');
 }); 
+document.getElementById("update-dates-btn").addEventListener("click", function () {
+    const checkInDate = new Date(document.getElementById("check-in").value);
+    const checkOutDate = new Date(document.getElementById("check-out").value);
+
+    if (checkInDate && checkOutDate && checkOutDate > checkInDate) {
+        // Calculate the number of nights
+        const timeDifference = checkOutDate - checkInDate;
+        const totalNights = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+        // Update the reservation card
+        document.getElementById("reserve-check-in").textContent = checkInDate.toLocaleDateString();
+        document.getElementById("reserve-check-out").textContent = checkOutDate.toLocaleDateString();
+        document.getElementById("total-nights").textContent = totalNights;
+
+        // Calculate total cost
+        const nightlyRate = 509;
+        const totalCost = nightlyRate * totalNights;
+        document.getElementById("total-cost").textContent = `$${totalCost}`;
+        document.getElementById("grand-total").textContent = `$${totalCost + 120 + 287}`; // Add fees
+    } else {
+        alert("Please select valid dates!");
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.getElementById("signupForm");
     const password = document.getElementById("pass");
@@ -69,4 +97,5 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
         }
     });
-});
+}
+);

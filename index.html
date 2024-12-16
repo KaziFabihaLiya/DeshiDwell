@@ -18,44 +18,228 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
 </head>
 <body>
-    <!-- start -->
-<header class="headerfix">
-
-    <div class="container">
-        <div class="bar">
-            <a href="#home" class="logo"><span>DeshiDwell</span></a>
-            <nav class="navbarr">
-                <nav class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#foot">Contact US</a>
-                    <a href="#reviews">Reviews</a>
-                </nav>
-            </nav>
-            <div class="buttons" id="buttons">    
-                <a href="../DeshiDwell/login.html" class="link-btn" align-items-center><nobr>Book Now</nobr></a>
-                <a href="../DeshiDwell/login.html" class="link-btn" align-items-center><nobr>Login/Sign Up</nobr></a>
-            </div>            
-            <div id="menu-btn" class="fas fa-bars"></div>
-        </div>
-    </div>
-
-</header>
-    <!-- header end -->
-<section class="home" id="home">
-    <div class="container">
-        <div class="minvh">
-            <div class="content text-center text-md-start">
-                <h1 class="title">Welcome to Deshi Dwell</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Dolorum reiciendis, commodi possimus non assumenda vitae<br>voluptatibus error omnis debitis eligendi et sapiente molestias<br>quod fuga ab maiores accusamus impedit cupiditate.</p>
-                <a href="#contact" class="link-btn">Book Now</a> 
+    <header class="header" id="header">
+        <div class="left-section">
+            <div class="logo">
+              <img src="../DeshiDwell/resources/image/logo.png" alt="Logo">
             </div>
-            
+            <!-- <nav class="navbar">
+              <a href="#" class="nav-link">Home</a>
+              <a href="#" class="nav-link">Features</a>
+              <a href="#" class="nav-link">About</a>
+            </nav> -->
+        </div>
+        <div class="middle-section">
+            <nav class="navbar">
+                <a href="#header" class="nav-link"><span>HOME</span></a>
+                <a href="#review" class="nav-link"><span>REVIEWS</span></a>
+                <a href="#about" class="nav-link"><span>ABOUT</span></a>
+            </nav>
+            <div class="search-bar">
+                <div class="search-item where-section">
+                    <label>Where</label>
+                    <input type="text" placeholder="Search destinations" id="search-destination" autocomplete="off">
+                    <div class="suggestions" id="suggestion-box">
+                        <p class="suggestion-title">Suggested destinations</p>
+                        <div class="suggestion-item">
+                            <img src="icons/toronto.png" alt="Toronto Icon">
+                            <div>
+                                <strong>Toronto, Canada</strong>
+                                <p>For sights like CN Tower</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-item">
+                            <img src="icons/bangkok.png" alt="Bangkok Icon">
+                            <div>
+                                <strong>Bangkok, Thailand</strong>
+                                <p>For its bustling nightlife</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-item">
+                            <img src="icons/london.png" alt="London Icon">
+                            <div>
+                                <strong>London, United Kingdom</strong>
+                                <p>For its stunning architecture</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-item">
+                            <img src="icons/newyork.png" alt="New York Icon">
+                            <div>
+                                <strong>New York City, NY</strong>
+                                <p>For its top-notch dining</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="search-item">
+                    <label>Check in</label>
+                    <input type="date" placeholder="Add dates">
+                </div>
+                <div class="divider"></div>
+                <div class="search-item">
+                    <label>Check out</label>
+                    <input type="date" placeholder="Add dates">
+                </div>
+                <div class="divider"></div>
+                <div class="search-item">
+                    <label>Who</label>
+                    <input type="" placeholder="Add guests">
+                </div>
+                <button class="search-button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="right-btn">
+            <div class="right-section">
+                <div class="user-icon">
+                    <img src="../DeshiDwell/resources/image/user.png" alt="User">
+                </div>
+                <div class="actions">
+                    <div class="user-menu">
+                      <button class="menu-button">☰</button>
+                      <div class="dropdown" id="dropdown">
+                        <ul>
+                          <li><a href="signup.html">Sign up</a></li>
+                          <li><a href="login.html">Log in</a></li>
+                          <li><a href="roombook.html">Reserve</a></li>
+                          <li><a href="roombook.html">Book Now</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="service" id="accommodation">
+    <div class="container">
+        <h2><cap>ACCOMMODATIONS</cap></h2>
+        <div class="service-cards">
+            <!-- Room Cards -->
+            <div class="service-card">
+                <a href="roombook.html"><img src="../DeshiDwell/resources/image/room-image.jpg" alt="Deluxe Room" class="service-card-img"></a>
+                <h3>Deluxe Room</h3>
+                <p class="service-card-description">A spacious deluxe room with a king-sized bed, modern amenities, and a beautiful city view.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $150/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <a href="roombook.html"><img src="../DeshiDwell/resources/image/flat-image.jpg" alt="1-Bedroom Flat" class="service-card-img"></a>
+                <h3>1-Bedroom Flat</h3>
+                <p class="service-card-description">A cozy 1-bedroom flat perfect for longer stays, complete with a fully equipped kitchen and living area.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $300/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <!-- Additional Room and Flat Cards -->
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/studio-apartment.jpg" alt="Studio Apartment" class="service-card-img">
+                <h3>Studio Apartment</h3>
+                <p class="service-card-description">A compact studio apartment ideal for solo travelers with modern amenities and a functional living space.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $120/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/2-bedroom-flat.webp" alt="2-Bedroom Flat" class="service-card-img">
+                <h3>2-Bedroom Flat</h3>
+                <p class="service-card-description">A spacious 2-bedroom flat with a fully equipped kitchen, living room, and balcony for families or small groups.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $450/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/penthouse.jpg" alt="Penthouse Suite" class="service-card-img">
+                <h3>Penthouse Suite</h3>
+                <p class="service-card-description">An ultra-luxury penthouse suite with panoramic views, a private terrace, and top-tier amenities.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $800/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/family-suite.jpg" alt="Family Suite" class="service-card-img">
+                <h3>Family Suite</h3>
+                <p class="service-card-description">A large suite perfect for families, featuring two bedrooms, a living area, and family-friendly amenities.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $500/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/eco-lodge.png" alt="Eco Lodge" class="service-card-img">
+                <h3>Eco Lodge</h3>
+                <p class="service-card-description">A sustainable eco-lodge offering nature-centric accommodations with organic products and off-grid living.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $220/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/beachfront-villa.jpg" alt="Beachfront Villa" class="service-card-img">
+                <h3>Beachfront Villa</h3>
+                <p class="service-card-description">A luxury beachfront villa offering private access to the beach, pool, and high-end living spaces.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $1,000/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/mountain-cabin.jpg" alt="Mountain Cabin" class="service-card-img">
+                <h3>Mountain Cabin</h3>
+                <p class="service-card-description">A cozy mountain cabin ideal for a retreat, with breathtaking views and a fireplace for chilly nights.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $350/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/loft-apartment.jpg" alt="Loft Apartment" class="service-card-img">
+                <h3>Loft Apartment</h3>
+                <p class="service-card-description">A chic loft-style apartment with high ceilings and an open floor plan, perfect for stylish stays.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $250/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/luxury-cottage.jpg" alt="Luxury Cottage" class="service-card-img">
+                <h3>Luxury Cottage</h3>
+                <p class="service-card-description">A charming luxury cottage with a homely feel, offering privacy, a garden, and a relaxing atmosphere.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $400/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
+
+            <div class="service-card">
+                <img src="../DeshiDwell/resources/image/backpacker-hostel.jpg" alt="Backpacker Hostel" class="service-card-img">
+                <h3>Backpacker Hostel</h3>
+                <p class="service-card-description">Affordable and social, this hostel is perfect for budget travelers with shared dorms and common areas.</p>
+                <ul class="service-card-features">
+                    <li><strong>Price:</strong> $50/night</li>
+                </ul>
+                <a href="roombook.html"><button class="service-card-btn">Book Now</button></a>
+            </div>
         </div>
     </div>
 </section>
-
 <section class="about" id="about">
     <div class="container">
         <div class="row align-items-center">
@@ -72,97 +256,125 @@
     </div>
 </section>
 
+
 <section class="services" id="services">
-    <h1 class="heading">Our Services</h1>
+    <h2>SERVICES</h2>
 
     <div class="box-container container">
         <div class="box">
-            <img src="../DeshiDwell/resources/image/icon1.jpg" alt="">
+            <img src="../DeshiDwell/resources/image/icon1.jpg" alt="" >
             <h3>Expert Assistance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
         <div class="box">
             <img src="../DeshiDwell/resources/image/icon2.jpg" alt="">
             <h3>Accomodation</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
         <div class="box">
             <img src="../DeshiDwell/resources/image/icon3.jpg" alt="">
             <h3>Subcription Plan</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
         <div class="box">
             <img src="../DeshiDwell/resources/image/icon4.jpg" alt="">
             <h3>Tourist Advisor</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
         <div class="box">
             <img src="../DeshiDwell/resources/image/icon5.jpg" alt="">
             <h3>Tour Guidance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
         <div class="box">
             <img src="../DeshiDwell/resources/image/icon6.jpg" alt="">
             <h3>Extra Facilities</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, repudiandae quia hic libero eligendi ratione architecto error inventore voluptates
-            magni vel! Dignissimos ab explicabo odio, voluptatum quas cupiditate debitis quidem!</p>
         </div>
     </div>
 </section>
-<section class="reviews" id="reviews">
-    <h1 class="heading"> Satisfied Customer </h1>
-    <div class="box-container container">
-        <div class="box">
-            <img src="../DeshiDwell/resources/image/pic1.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sit error sed quod,
-                <br>ad repellat voluptatem enim! A necessitatibus inventore dolor? Provident dolor totam 
-                <br>officia enim labore necessitatibus praesentium amet.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+<section class="reviews-section" id="review">
+    <div class="container" >
+        <h2 class="reviews-title">REVIEWS</h2>
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic1.jpg" alt="Ryosuke" class="review-image">
+                <div class="review-content">
+                    <h3>Ryosuke</h3>
+                    <p>1 year on Airbnb</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed one night</p>
+                    <p>It was my first time to use it. There were no private houses around, so I didn't have to worry about noise, so I enjoyed music with speakers and conversations in the open-air bath...</p>
+                    <a href="#">Show more</a>
+                </div>
             </div>
-            <h3>Kazi Fabiha Liya</h3>
-            <span>Satisfied Client</span>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic2.jpg" alt="Keisuke" class="review-image">
+                <div class="review-content">
+                    <h3>Keisuke</h3>
+                    <p>Koto City, Japan</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed with kids</p>
+                    <p>It was a great sauna place to stay. You can enjoy the outdoor air bath with a view of the autumn foliage Lake Nojiri.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic1.jpg" alt="Ryosuke" class="review-image">
+                <div class="review-content">
+                    <h3>Ryosuke</h3>
+                    <p>1 year on Airbnb</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed one night</p>
+                    <p>It was my first time to use it. There were no private houses around, so I didn't have to worry about noise, so I enjoyed music with speakers and conversations in the open-air bath...</p>
+                    <a href="#">Show more</a>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic2.jpg" alt="Keisuke" class="review-image">
+                <div class="review-content">
+                    <h3>Keisuke</h3>
+                    <p>Koto City, Japan</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed with kids</p>
+                    <p>It was a great sauna place to stay. You can enjoy the outdoor air bath with a view of the autumn foliage Lake Nojiri.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic3.jpg" alt="Nagasawa" class="review-image">
+                <div class="review-content">
+                    <h3>Nagasawa</h3>
+                    <p>Shinagawa City, Japan</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 3 weeks ago · Group trip</p>
+                    <p>We had a great stay!</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic2.jpg" alt="Keisuke" class="review-image">
+                <div class="review-content">
+                    <h3>Keisuke</h3>
+                    <p>Koto City, Japan</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 2 weeks ago · Stayed with kids</p>
+                    <p>It was a great sauna place to stay. You can enjoy the outdoor air bath with a view of the autumn foliage Lake Nojiri.</p>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/pic3.jpg" alt="Nagasawa" class="review-image">
+                <div class="review-content">
+                    <h3>Nagasawa</h3>
+                    <p>Shinagawa City, Japan</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 3 weeks ago · Group trip</p>
+                    <p>We had a great stay!</p>
+                </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card">
+                <img src="../DeshiDwell/resources/image/house.jpg" alt="Masa" class="review-image">
+                <div class="review-content">
+                    <h3>Masa</h3>
+                    <p>3 years on Airbnb</p>
+                    <p class="review-meta">★ ★ ★ ★ ★ · 3 weeks ago · Stayed one night</p>
+                    <p>It was a private space with a stunning view. The kitchen window was large, so we had a stunning view from the room. It was easy to prepare the sauna while looking at the...</p>
+                    <a href="#">Show more</a>
+                </div>
+            </div>
         </div>
-        <div class="box">
-            <img src="../DeshiDwell/resources/image/pic2.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sit error sed quod, 
-            <br>ad repellat voluptatem enim! A necessitatibus inventore dolor? Provident dolor totam officia
-            <br>enim labore necessitatibus praesentium amet.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <h3>Ellie Mao</h3>
-            <span>Satisfied Client</span>
-        </div>
-        <div class="box">
-            <img src="../DeshiDwell/resources/image/pic3.jpg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sit error sed quod,
-                <br>ad repellat voluptatem enim! A necessitatibus inventore dolor? Provident dolor totam officia
-                <br>enim labore necessitatibus praesentium amet.</p>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-            </div>
-            <h3>Syed Ahad</h3>
-            <span>Satisfied Client</span>
-         </div>
-    </div> 
+    </div>
 </section>
 <section class="footer" id="foot">
     <div class="box-container container">

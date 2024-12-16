@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>Admin</h1>
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item active"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-list"></i> Manage Listings</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Moderate Content</a>
+                <a href="#"><i class="fas fa-credit-card"></i> Handle Payments</a>
+                <a href="#"><i class="fas fa-bell"></i> Send Notifications</a>
+                <a href="#"><i class="fas fa-chart-pie"></i> View Analytics</a>
+                <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h2>Welcome, Admin</h2>
+                <button class="logout-btn">Logout</button>
+            </header>
+
+            <!-- Stats Overview -->
+            <section class="stats-overview">
+                <div class="stat-card">
+                    <h3>Total Listings</h3>
+                    <p>150</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Bookings</h3>
+                    <p>320</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Reviews</h3>
+                    <p>45</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Payments Processed</h3>
+                    <p>$12,340</p>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-grid">
+                    <button class="action-btn"><i class="fas fa-envelope"></i> Send Notifications</button>
+                    <button class="action-btn"><i class="fas fa-list"></i> Manage Listings</button>
+                    <button class="action-btn"><i class="fas fa-file-alt"></i> Moderate Content</button>
+                    <button class="action-btn"><i class="fas fa-chart-pie"></i> View Analytics</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../DeshiDwell/resources/js/script.js"></script>
+</body>
+</html>
