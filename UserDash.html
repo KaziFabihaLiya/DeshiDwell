@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
+            <li><a href="#" onclick="showSection('viewProperty')">🏡 View Property Details </a></li>
+            <li><a href="#" onclick="showSection('search')">🔍 Search Listings </a></li>
+            <li><a href="#" onclick="showSection('payments')">💳 Payments</a></li>
+            <li><a href="#" onclick="showSection('notifications')">🔔 Notifications</a></li>
+            <li><a href="#" onclick="showSection('support')">📞 Support</a></li>
+            <li><a href="#">🚪 Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header>
+            <h1 id="section-title">Welcome to Renter Dashboard</h1>
+        </header>
+
+        <!-- Sections -->
+        <section id="home" class="section active">
+            <p>Select an option from the sidebar to get started.</p>
+        </section>
+
+        <section id="viewProperty" class="section">
+            <div class="property-container">
+                <!-- Property Cards -->
+                <div class="property-card">
+                    <img src="/resources/image/2-bedroom-flat.webp" alt="Property 1">
+                    <div class="card-details">
+                        <h2>Deluxe Room</h2>
+                        <p>Price: <strong>$150/night</strong></p>
+                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
+                        <button>View Details</button>
+                    </div>
+                </div>
+                <!-- Additional Cards -->
+            </div>
+        </section>
+        <section id="viewProperty" class="section">
+            <div class="property-container">
+                <!-- Property Cards -->
+                <div class="property-card">
+                    <img src="/resources/image/beachfront-villa.jpg" alt="Property 1">
+                    <div class="card-details">
+                        <h2>Deluxe Room</h2>
+                        <p>Price: <strong>$150/night</strong></p>
+                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
+                        <button>View Details</button>
+                    </div>
+                </div>
+                <!-- Additional Cards -->
+            </div>
+        </section>
+        <section id="viewProperty" class="section">
+            <div class="property-container">
+                <!-- Property Cards -->
+                <div class="property-card">
+                    <img src="/resources/image/beachfront-villa.jpg" alt="Property 1">
+                    <div class="card-details">
+                        <h2>Deluxe Room</h2>
+                        <p>Price: <strong>$150/night</strong></p>
+                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
+                        <button>View Details</button>
+                    </div>
+                </div>
+                <!-- Additional Cards -->
+            </div>
+        </section>
+
+        <section id="search" class="section">
+            <p>Search listings feature coming soon!</p>
+        </section>
+        <section id="payments" class="section">
+            <p>Manage your payments here.</p>
+        </section>
+
+        <section id="notifications" class="section">
+            <p>Check your notifications.</p>
+        </section>
+
+        <section id="support" class="section">
+            <p>Contact support for assistance.</p>
+        </section>
+    </main>
+
+    <script src="resources/js/script.js"></script>
+</body>
+</html>

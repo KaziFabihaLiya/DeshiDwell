@@ -25,7 +25,7 @@ h1, h2, h3 {
     font-family: var(--font-heading);
 }
 
-/* Dashboard Layout */
+/* Admin Dashboard */
 .dashboard-container {
     display: flex;
     height: 100vh;
@@ -170,4 +170,113 @@ h1, h2, h3 {
 
 .action-btn:hover {
     background-color: var(--light-beige);
+}
+
+/* User Dashboard CSS */
+/* Header */
+/* Sidebar Styling */
+.sidebar {
+    background-color: #e1d8c9; /* Beige */
+    color: #5a3d2b; /* Darker Brown */
+    width: 250px;
+    height: 100vh; /* Full height */
+    position: fixed; /* Stick to the side */
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #5a3d2b;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #cbb89d; /* Light Brown */
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+.content {
+    margin-left: 250px; /* Adjusted for sidebar width */
+    padding: 20px;
+    background-color: #f8f3e7; /* Light Beige */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.property-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.property-card {
+    background-color: #fff;
+    border: 1px solid #e1d8c9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-details h2 {
+    color: #5a3d2b;
+    margin-bottom: 10px;
+}
+
+.card-details p {
+    color: #6e4e3e;
+    margin-bottom: 10px;
+}
+
+.card-details button {
+    background-color: #8e735b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card-details button:hover {
+    background-color: #6e4e3e;
 }

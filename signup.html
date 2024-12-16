@@ -10,7 +10,7 @@
   <div class="containersign">
     <div class="title">Registration</div>
     <div class="contentsign">
-      <form id="signupForm" action="insert.php" method="POST">
+      <form id="signupForm" action="http://localhost:3000/api/users" method="POST">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
@@ -38,9 +38,8 @@
           </div>
         </div>
         <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
+          <input type="radio" name="gender" id="dot-1" value="Male">
+          <input type="radio" name="gender" id="dot-2" value="Female">
           <span class="gender-title">Gender</span>
           <div class="category">
             <label for="dot-1">
@@ -51,10 +50,6 @@
               <span class="dot two"></span>
               <span class="gender">Female</span>
             </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Prefer not to say</span>
-            </label>
           </div>
         </div>
         <div class="button">
@@ -63,5 +58,6 @@
       </form>
     </div>
   </div>
+  <script src="../DeshiDwell/resources/js/script.js" defer></script>
 </body>
 </html>
