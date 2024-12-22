@@ -24,6 +24,53 @@ body {
 h1, h2, h3 {
     font-family: var(--font-heading);
 }
+#addProperty {
+    padding: 50px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make it take full width of content */
+    max-width: 800px; /* Optional: Set a max width */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+#addProperty h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#addPropertyForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#addPropertyForm label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#addPropertyForm input,
+#addPropertyForm textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#addPropertyForm button {
+    padding: 10px;
+    background-color: #a97c50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#addPropertyForm button:hover {
+    background-color: #896243;
+}
 
 /* Admin Dashboard */
 .dashboard-container {
@@ -184,7 +231,7 @@ h1, h2, h3 {
     top: 0;
     left: 0;
     padding-top: 20px;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar ul {
@@ -217,6 +264,9 @@ h1, h2, h3 {
     background-color: #f8f3e7; /* Light Beige */
     min-height: 100vh;
     box-sizing: border-box;
+    display: flex; /* Set flex for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between sections */
 }
 
 header {
@@ -229,6 +279,7 @@ header {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-around;
+    margin-top: 20px; /* Add space between the sections */
 }
 
 .property-card {

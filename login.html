@@ -9,32 +9,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="bodimg">
-    <div class="container">
-        <div class="row justify-content-center align-items-center min-vh-100">
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h3 class="text-center">Login</h3>
-                        <form id="loginForm" action="/login" method="post">
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" name="username" id="username" required autocapitalize="none" autocorrect="off">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" name="pass" id="pass" required>
-                            </div>
-                            <div class="logButton">
-                                <button type="submit" class="btn btn-primary w-100" name="signIn">Login</button>
-                            </div>
-                        </form>
-                        <p class="text-center mt-3"><a href="#">Forgot Password?</a></p>
-                        <a href="../DeshiDwell/signup.html"><button type="button" class="btn btn-primary w-100" id="btn2">Sign Up</button></a>
+    <section class="login">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="text-center">SIGN IN</h3><br>
+                            <form id="loginForm" action="http://localhost:3000/login" method="post">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" name="username" id="username" required autocapitalize="none" autocorrect="off">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" name="pass" id="pass" required>
+                                </div>
+                                <div class="logButton">
+                                    <button type="submit" class="btn btn-primary w-100" name="signIn">Login</button>
+                                </div>
+                            </form>
+                            <p class="text-center mt-3"><a href="#">Forgot Password?</a></p>
+                            <a href="./signup.html"><button type="button" class="btn btn-primary w-100" id="btn2">Sign Up</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <script src="resources/js/script.js"></script>
 </body>
 </html>

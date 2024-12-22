@@ -12,72 +12,42 @@
         <h2>Dashboard</h2>
         <ul>
             <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
-            <li><a href="#" onclick="showSection('viewProperty')">🏡 View Property Details </a></li>
+            <li><a href="#" onclick="showSection('addProperty')"><i class="fa fa-plus"></i> Add Property Details</a></li>
+            <li><a href=#viewProperty onclick="showSection('viewProperty')">🏡 View Property Details </a></li>
             <li><a href="#" onclick="showSection('search')">🔍 Search Listings </a></li>
             <li><a href="#" onclick="showSection('payments')">💳 Payments</a></li>
             <li><a href="#" onclick="showSection('notifications')">🔔 Notifications</a></li>
             <li><a href="#" onclick="showSection('support')">📞 Support</a></li>
-            <li><a href="#">🚪 Logout</a></li>
+            <li><a href="/logout" id="logoutButton">🚪 Logout</a></li>
         </ul>
     </aside>
 
     <!-- Main Content -->
     <main class="content">
         <header>
-            <h1 id="section-title">Welcome to Renter Dashboard</h1>
+            <h2 id="welcomeMessage">Welcome, User!</h2>
         </header>
-
-        <!-- Sections -->
-        <section id="home" class="section active">
-            <p>Select an option from the sidebar to get started.</p>
+        <section id="addProperty" class="section">
+            <h2>Add New Property</h2>
+            <form id="addPropertyForm" enctype="multipart/form-data">
+                <label for="name">Property Name</label>
+                <input type="text" id="name" name="name" required />
+    
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" required />
+    
+                <label for="description">Description</label>
+                <textarea id="description" name="description" required></textarea>
+    
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*" required />
+    
+                <button type="submit">Add Property</button>
+            </form>
         </section>
-
-        <section id="viewProperty" class="section">
-            <div class="property-container">
-                <!-- Property Cards -->
-                <div class="property-card">
-                    <img src="/resources/image/2-bedroom-flat.webp" alt="Property 1">
-                    <div class="card-details">
-                        <h2>Deluxe Room</h2>
-                        <p>Price: <strong>$150/night</strong></p>
-                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
-                        <button>View Details</button>
-                    </div>
-                </div>
-                <!-- Additional Cards -->
-            </div>
+        <section id="viewProperty" class="property-container">
+            <!-- Dynamically generated property cards -->
         </section>
-        <section id="viewProperty" class="section">
-            <div class="property-container">
-                <!-- Property Cards -->
-                <div class="property-card">
-                    <img src="/resources/image/beachfront-villa.jpg" alt="Property 1">
-                    <div class="card-details">
-                        <h2>Deluxe Room</h2>
-                        <p>Price: <strong>$150/night</strong></p>
-                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
-                        <button>View Details</button>
-                    </div>
-                </div>
-                <!-- Additional Cards -->
-            </div>
-        </section>
-        <section id="viewProperty" class="section">
-            <div class="property-container">
-                <!-- Property Cards -->
-                <div class="property-card">
-                    <img src="/resources/image/beachfront-villa.jpg" alt="Property 1">
-                    <div class="card-details">
-                        <h2>Deluxe Room</h2>
-                        <p>Price: <strong>$150/night</strong></p>
-                        <p>A luxurious room with a king-sized bed and stunning city views.</p>
-                        <button>View Details</button>
-                    </div>
-                </div>
-                <!-- Additional Cards -->
-            </div>
-        </section>
-
         <section id="search" class="section">
             <p>Search listings feature coming soon!</p>
         </section>
