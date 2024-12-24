@@ -32,7 +32,6 @@ app.use(express.urlencoded({ extended: true })); // For form-urlencoded data
 mongoose.connect('mongodb://127.0.0.1:27017/deshidwell')
     .then(() => console.log('MongoDB connected!'))
     .catch(err => console.error('MongoDB connection error:', err));
-
 // app.post('/api/users', async (req, res) => {
 //   try {
 //       const newUser = new User({
@@ -108,6 +107,9 @@ app.use(
 );
 
 app.post('/api/properties', upload.single('image'), async (req, res) => {
+  console.log('Received data:', req.body); // Log the received data
+  console.log('Uploaded file:', req.file); // Log the uploaded file
+
   try {
       const { name, price, description } = req.body;
       const imagePath = `/resources/uploads/${req.file.filename}`; // Get the uploaded image path
@@ -119,24 +121,74 @@ app.post('/api/properties', upload.single('image'), async (req, res) => {
           image: imagePath,
       });
 
-      await newProperty.save();
+      await newProperty.save(); // Save the property to the database
       res.status(201).json({ message: 'Property added successfully!', data: newProperty });
   } catch (err) {
+      console.error('Error saving property:', err); // Log the error for debugging
       res.status(500).json({ error: 'Failed to add property' });
   }
 });
 
+app.post('/api/properties', upload.single('image'), async (req, res) => {
+  console.log('Received data:', req.body); // Log the received data
+  console.log('Uploaded file:', req.file); // Log the uploaded file
 
-// API route to fetch all properties
-app.get('/api/properties', async (req, res) => {
   try {
       const properties = await Property.find();
       res.json(properties);
   } catch (err) {
-      res.status(500).json({ error: 'Failed to fetch properties' });
+      console.error('Error saving property:', err);
+      res.status(500).json({ error: 'Failed to add property' });
   }
 });
+// // API route to fetch all properties
+// app.get('/api/properties', async (req, res) => {
+//   try {
+//       const properties = await Property.find();
+//       res.json(properties);
+//   } catch (err) {
+//       res.status(500).json({ error: 'Failed to fetch properties' });
+//   }
+// });
 
+//firebase endpoint 
+const admin = require('firebase-admin');
+
+// Initialize Firebase Admin
+admin.initializeApp({
+  credential: admin.credential.cert(require('./firebase/serviceAccountKey.json')), // Adjust the path
+});
+
+
+app.post('/api/firebase-login', async (req, res) => {
+    const { uid, email, displayName, photoURL } = req.body;
+
+    try {
+        // Find or create a user in MongoDB
+        let user = await User.findOne({ uid });
+        if (!user) {
+            user = new User({
+                uid,
+                email,
+                displayName,
+                photoURL,
+            });
+            await user.save();
+        }
+
+        // Create a session
+        req.session.user = {
+            id: user._id,
+            displayName: user.displayName,
+            email: user.email,
+        };
+
+        res.status(200).json({ message: "User logged in successfully!" });
+    } catch (error) {
+        console.error("Error logging in user:", error.message);
+        res.status(500).json({ error: "Internal server error." });
+    }
+});
 
 app.post('/signup', async (req, res) => {
   try {

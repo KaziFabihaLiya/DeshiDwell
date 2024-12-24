@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h2>Dashboard</h2>
         <ul>
             <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
-            <li><a href="#" onclick="showSection('addProperty')"><i class="fa fa-plus"></i> Add Property Details</a></li>
+            <li><a href="#" onclick="showSection('addProperty')"><i class="fa-solid fa-plus"></i>&nbsp; Add Property Details</a></li>
             <li><a href=#viewProperty onclick="showSection('viewProperty')">🏡 View Property Details </a></li>
             <li><a href="#" onclick="showSection('search')">🔍 Search Listings </a></li>
             <li><a href="#" onclick="showSection('payments')">💳 Payments</a></li>
@@ -65,5 +66,7 @@
     </main>
 
     <script src="resources/js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
 </body>
 </html>

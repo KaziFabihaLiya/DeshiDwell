@@ -47,6 +47,66 @@ tr:hover {
     gap: 2rem;
     padding: .7rem 2rem;
 }
+/* login google part  */
+.google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.google-login:hover {
+    background-color: #f5f5f5; /* Light background on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.google-login img {
+    width: 20px; /* Size of the Google logo */
+    margin-right: 10px; /* Space between logo and text */
+}
+/* modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 .btn{
     padding: .5rem 8rem;
 }
@@ -574,56 +634,56 @@ form .button input:hover {
 }
 
 .user-menu {
-position: relative;
+    position: relative;
 }
 
 .menu-button {
-background: none;
-border: none;
-font-size: 20px;
-cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .dropdown {
-position: absolute;
-right: 0;
-top: 35px;
-align-items: center;
-background: #fff;
-border: 1px solid #ddd;
-border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-display: none;
-width: 200px;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 200px;
 }
 
 .dropdown ul {
-list-style: none;
-padding: 0;
-margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .dropdown li {
-padding: 10px;
-text-align: center;
+    padding: 10px;
+    text-align: center;
 }
 
 .dropdown li a {
-text-decoration: none;
-color: #000;
-font-size: 14px;
-font-family: "Poppins", sans-serif;
-font-weight: 300;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
 
 .dropdown li:hover {
-background-color: #f5f5f5;
+    background-color: #f5f5f5;
 }
 
 
 /* Show dropdown when menu button is clicked */
 .user-menu.active .dropdown {
-display: block;
+    display: block;
 }
 /* roombook er hero section */
 .hero-title{

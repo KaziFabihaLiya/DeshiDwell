@@ -1,34 +1,153 @@
-let menu = document.querySelector('#menu-btn');
-document.querySelector('.menu-button').addEventListener('click', () => {
-    const userMenu = document.querySelector('.user-menu');
-    userMenu.classList.toggle('active');
-});
-menu.onclick = () => {
-    menu.classList.toggle('fa-times');
-    navlinks.classList.toggle('active');
-}   
-window.onscroll = () => {
-    menu.classList.remove('fa-times');
-    navlinks.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownButton = document.querySelector('.menu-button');
+    const dropdownMenu = document.querySelector('.dropdown'); // Select the dropdown menu
 
-    if (window.scrollY>0){
-        header.classList.add('active');
+    if (dropdownButton && dropdownMenu) {
+        // Toggle dropdown visibility on button click
+        dropdownButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the click event from bubbling up
+            const userMenu = dropdownButton.closest('.user-menu'); // Get the closest user-menu
+            userMenu.classList.toggle('active'); // Toggle the active class
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.parentElement.classList.remove('active'); // Remove active class from user-menu
+            }
+        });
+    } else {
+        console.error("Dropdown button or menu is missing!");
     }
-    else{
-        header.classList.remove('active');
+});
+
+//Handle Firebase
+// Import Firebase config
+// import { app } from "../js/firebaseConfig";
+// import {
+//   getAuth,
+//   signInWithPopup,
+//   GoogleAuthProvider,
+// } from "firebase/auth";
+
+// // Initialize Firebase Auth
+// const auth = getAuth(app);
+
+// // Google OAuth Login
+// document.addEventListener("DOMContentLoaded", () => {
+//   const googleLoginButton = document.querySelector("#googleLoginButton");
+
+//   if (googleLoginButton) {
+//     googleLoginButton.addEventListener("click", () => {
+//       const provider = new GoogleAuthProvider();
+//       signInWithPopup(auth, provider)
+//         .then((result) => {
+//           console.log("User logged in:", result.user);
+//         })
+//         .catch((error) => {
+//           console.error("Authentication error:", error.message);
+//         });
+//     });
+//   }
+// });
+
+// // Error handling
+// fetch('/api/some-endpoint')
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok ' + response.statusText);
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log('Data fetched:', data);
+//   })
+//   .catch((error) => {
+//     console.error('Fetch error:', error);
+//     // Optionally display an error message to the user
+//   });
+
+// firebase.auth().signInWithEmailAndPassword(email, password)
+//   .then((userCredential) => {
+//     // Signed in successfully
+//     console.log('User signed in:', userCredential.user);
+//   })
+//   .catch((error) => {
+//     console.error('Authentication error:', error.message);
+//     // Optionally show an alert or display a message on the UI
+//   });
+
+//Login Form
+const { loginUser , auth, GoogleAuthProvider, signInWithPopup } = require('./firebaseConfig'); // Adjust the path as necessary
+
+// Google Login Functionality
+document.getElementById('googleLoginButton').addEventListener('click', async function() {
+    const provider = new GoogleAuthProvider(); // Create a new Google provider
+
+    try {
+        const result = await signInWithPopup(auth, provider); // Sign in with a popup
+        const user = result.user; // Get user information
+        console.log('Google User:', user);
+        alert('Login successful!'); // Notify user of success
+    } catch (error) {
+        console.error('Google login error:', error.message);
+        alert('Login failed: ' + error.message); // Notify user of failure
     }
+});
+
+// Get modal elements
+const modal = document.getElementById('notificationModal');
+const modalMessage = document.getElementById('modalMessage');
+const closeModalButton = document.getElementById('closeModal');
+
+// Function to show the modal with a message
+function showModal(message) {
+    modalMessage.textContent = message; // Set the message in the modal
+    modal.style.display = 'block'; // Show the modal
 }
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+
+// Close the modal when the close button is clicked
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none'; // Hide the modal
+});
+
+// Close the modal when clicking outside of the modal content
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none'; // Hide the modal
+    }
+});
+
+// Existing login form functionality
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('username').value; // Assuming username is the email
     const password = document.getElementById('pass').value;
-    
-    console.log('Username:', username);
-    console.log('Password:', pass);
-    
-    alert('Login submitted! (Check console for values)');
-}); 
+
+    try {
+        const response = await fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: email, pass: password }),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error); // Throw an error with the message from the server
+        }
+
+        const user = await response.json(); // Assuming successful login returns user data
+        alert('Login successful!'); // Notify user of success
+        console.log('Logged in user:', user);
+        // Redirect to dashboard or perform other actions
+    } catch (error) {
+        // Display the error message in the modal
+        showModal('Login failed: ' + error.message); // Show the error message in the modal
+    }
+});
 //fully loaded before accessing elements
 document.addEventListener('DOMContentLoaded', () => {
     const someElement = document.getElementById('targetElementId'); // Update ID
@@ -63,7 +182,6 @@ document.getElementById("update-dates-btn").addEventListener("click", function (
         alert("Please select valid dates!");
     }
 });
-
 // document.addEventListener("DOMContentLoaded", function () {
 //     const signupForm = document.getElementById("signupForm");
 //     const password = document.getElementById("pass");
@@ -163,10 +281,10 @@ function showSection(sectionId) {
 }
 
 
-// Default Section Visibility
-// document.addEventListener('DOMContentLoaded', () => {
-//     showSection('home');
-// });
+//Default Section Visibility
+document.addEventListener('DOMContentLoaded', () => {
+    showSection('home');
+});
 
 // Add event listeners for navigation items
 document.querySelectorAll('.nav-item').forEach(item => {
@@ -193,7 +311,15 @@ fetch('/api/endpoint')
     .catch((error) => {
         console.error('Error fetching data:', error);
     });
-
+signInWithPopup(auth, provider)
+    .then((result) => {
+      // Handle successful login
+      console.log(result.user);
+    })
+    .catch((error) => {
+      // Handle error
+      console.error("Error during login:", error.message);
+    });
 document.addEventListener('DOMContentLoaded', async () => {
     const welcomeMessage = document.getElementById('welcomeMessage');
     
@@ -269,16 +395,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 });
+//file load
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './resources/uploads'); // Save files in 'resources/uploads'
+    },
+    filename: (req, file, cb) => {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + '-' + file.originalname);
+    },
+});
 
+const upload = multer({ storage });
 //property 
 document.addEventListener('DOMContentLoaded', () => {
     const addPropertyForm = document.getElementById('addPropertyForm');
 
-    // Handle form submission
     addPropertyForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent default form submission
 
-        const formData = new FormData(addPropertyForm);
+        const formData = new FormData(addPropertyForm); // Gather form data
 
         try {
             const response = await fetch('/api/properties', {
@@ -290,7 +426,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 alert(result.message); // Show success message
                 addPropertyForm.reset(); // Clear the form
-                fetchPropertyDetails(); // Refresh property list
             } else {
                 const error = await response.json();
                 alert(error.error || 'Failed to add property');
