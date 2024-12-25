@@ -1,4 +1,4 @@
-resources/js/firebase/serviceAccountKey.json
+resources/js/firebase/serviceAccountKey.js
 .env
 node_modules/
 *.log
