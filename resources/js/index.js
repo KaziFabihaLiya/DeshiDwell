@@ -29,9 +29,11 @@ const upload = multer({ storage });
 app.use(express.json()); // For JSON data
 app.use(express.urlencoded({ extended: true })); // For form-urlencoded data
 
-mongoose.connect('mongodb://127.0.0.1:27017/deshidwell')
-    .then(() => console.log('MongoDB connected!'))
-    .catch(err => console.error('MongoDB connection error:', err));
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 // app.post('/api/users', async (req, res) => {
 //   try {
 //       const newUser = new User({
