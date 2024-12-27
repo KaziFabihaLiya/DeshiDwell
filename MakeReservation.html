@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Reservation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Reusing Header -->
+    <header class="header" id="make-reservation-header">
+        <div class="left-section">
+            <div class="logo">
+                <img src="/resources/image/logo.png" alt="Logo">
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="user-icon">
+                <img src="/resources/image/user.png" alt="User">
+            </div>
+            <div class="actions">
+                <div class="user-menu">
+                  <button class="menu-button">☰</button>
+                  <div class="dropdown" id="dropdown">
+                    <ul>
+                      <li><a href="signup.html">Sign up</a></li>
+                      <li><a href="login.html">Log in</a></li>
+                      <li><a href="roombook.html">Reserve</a></li>
+                      <li><a href="roombook.html">Book Now</a></li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+
+    <!-- Main Content -->
+    <div class="make-reservation-container">
+        <!-- Left Section: Trip Details -->
+        <div class="make-reservation-trip-details">
+            <div class="reservation-header">
+                <button id="back-button" class="back-button">
+                    <span>&larr;</span>
+                </button>
+                <h1 class="reservation-title">Request Reservation</h1>
+            </div>
+            <div class="make-reservation-trip-section">
+                <h2>Your Trip</h2>
+                <div class="line"></div>
+                <p>
+                    <span>Accommodation Name:</span> Cozy Cottage in Copenhagen
+                </p>
+                <p>
+                    <span>Dates:</span> Jan 21 – 26, 2025
+                    <a href="#">Edit</a>
+                </p>
+                <p>
+                    <span>Total Days:</span> 5 Days
+                </p>
+                <p>
+                    <span>Guests:</span> 1 Guest
+                    <a href="#">Edit</a>
+                </p>
+            </div>
+            <div class="line"></div>
+            <div class="make-reservation-auth-section">
+                <h2>Log in or Sign up to book</h2>
+                <div class="make-reservation-auth-buttons">
+                    <a href="login.html">Log In</a>
+                    <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+            <div id="confirm-section" style="display: none;">
+                <button id="confirm-reservation-btn">Confirm Reservation</button>
+            </div>
+        </div>
+
+        <!-- Right Section: Price Details -->
+        <div class="make-reservation-price-details">
+            <div class="shared-room-details">
+                <img src="resources/image/beachfront-villa.jpg" alt="Room Image" class="room-image">
+                <div class="room-info">
+                    <h3 class="room-title">Private and charming room near the airport</h3>
+                    <p class="room-description">Room in home</p>
+                    <p class="room-rating">
+                        <span>★ 4.92 (493 reviews)</span>
+                    </p>
+                </div>
+            </div>
+            <div class="line"></div>
+            <h3>Price Details</h3>
+            <div class="line"></div>
+            <div class="make-reservation-price-item">
+                <span>$39.39 x 5 nights</span>
+                <span>$196.95</span>
+            </div>
+            <div class="make-reservation-price-item">
+                <span>Cleaning Fee</span>
+                <span>$20.84</span>
+            </div>
+            <div class="make-reservation-price-item">
+                <span>Service Fee</span>
+                <span>$33.25</span>
+            </div>
+            <div class="line"></div>
+            <div class="make-reservation-price-total">
+                <span>Total (USD):</span>
+                <span>$251.04</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,13 +12,10 @@
     <aside class="sidebar">
         <h2>Dashboard</h2>
         <ul>
-            <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
-            <li><a href="#" onclick="showSection('addProperty')"><i class="fa-solid fa-plus"></i>&nbsp; Add Property Details</a></li>
-            <li><a href=#viewProperty onclick="showSection('viewProperty')">🏡 View Property Details </a></li>
-            <li><a href="#" onclick="showSection('search')">🔍 Search Listings </a></li>
-            <li><a href="#" onclick="showSection('payments')">💳 Payments</a></li>
-            <li><a href="#" onclick="showSection('notifications')">🔔 Notifications</a></li>
-            <li><a href="#" onclick="showSection('support')">📞 Support</a></li>
+            <li><a href="#" class="sidebar-link" data-target="home">🏠 Home</a></li>
+            <li><a href="#" class="sidebar-link" data-target="addProperty">➕ Add Property</a></li>
+            <li><a href="#" class="sidebar-link" data-target="viewProperty">🏡 View Property</a></li>
+            <li><a href="#" class="sidebar-link" data-target="search">🔍 Search</a></li>
             <li><a href="/logout" id="logoutButton">🚪 Logout</a></li>
         </ul>
     </aside>
@@ -26,7 +23,7 @@
     <!-- Main Content -->
     <main class="content">
         <header>
-            <h2 id="welcomeMessage">Welcome, User!</h2>
+            <h2 id="userGreeting">Welcome, User!</h2>
         </header>
         <section id="addProperty" class="section">
             <h2>Add New Property</h2>
@@ -46,8 +43,16 @@
                 <button type="submit">Add Property</button>
             </form>
         </section>
-        <section id="viewProperty" class="property-container">
-            <!-- Dynamically generated property cards -->
+        <section id="viewProperty" class="section">
+            <h2>My Properties</h2>
+            <div class="property-list">
+                <!-- Dynamically Generated Property Cards Will Be Inserted Here -->
+            </div>
+            <div class="pagination">
+                <button>&laquo; Prev</button>
+                <span>Page 2 of 4</span>
+                <button>Next &raquo;</button>
+            </div>
         </section>
         <section id="search" class="section">
             <p>Search listings feature coming soon!</p>

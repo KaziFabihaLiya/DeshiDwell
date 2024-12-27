@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: var(--light-beige);
+    background-color: var(--white);
     color: var(--brown);
 }
 
@@ -70,6 +70,56 @@ h1, h2, h3 {
 
 #addPropertyForm button:hover {
     background-color: #896243;
+}
+/* View PRoperty */
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #5a3d2b;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #6e4e3e;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #5a3d2b;
+}
+.section {
+    display: none; /* Hide all sections by default */
+    padding: 20px;
+}
+
+.section.active {
+    display: block; /* Display active section */
+}
+
+/* reservation */
+
+
+.property-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 /* Admin Dashboard */

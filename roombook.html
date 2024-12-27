@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- CSS file linked -->
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,6 +74,19 @@
                 <input type="date" id="check-in" required>
                 <label for="check-out">Check-out:</label>
                 <input type="date" id="check-out" required>
+                <label for="guests">Number of Guests:</label>
+                <select id="guests">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
                 <button id="update-dates-btn" class="btn-primary">Update Reservation</button>
             </div>
         </div>
@@ -125,28 +139,30 @@
                 <div class="check-details">
                     <div>
                         <label>Check-in</label>
-                        <p>1/24/2025</p>
+                        <p id="reserve-check-in">mm/dd/yy</p>
                     </div>
                     <div>
                         <label>Check-out</label>
-                        <p>1/29/2025</p>
+                        <p id="reserve-check-out">mm/dd/yy</p>
                     </div>
                     <div>
                         <label>Guests</label>
-                        <p>1 guest</p>
+                        <p id="reserve-guests">1 guest</p>
                     </div>
                 </div>
-                <div class="reservation-summary">
-                    <p><strong>$666 × 5 nights</strong> <span>$3,332</span></p>
-                    <p><strong>Cleaning fee</strong> <span>$120</span></p>
-                    <p><strong>Airbnb service fee</strong> <span>$487</span></p>
+                <div class="reservation-summary-price">
+                    <!-- <p><strong id="nightly-details"></strong> <span id="nightly-cost"></span></p> -->
+                    <p><strong>Per Day Fee </strong><span> $666 </span></p> 
+                    <br>
+                    <p><strong>DeshiDwell Service Fee </strong><span> $100</span></p>
                     <hr />
-                    <p><strong>Total before taxes    </strong> <span> $3,939</span></p>
+                    <p><strong>Total before taxes</strong> <span id="total-cost"></span></p>
                 </div>
-                <button class="btn-primary">Reserve</button>
+                <a href="MakeReservation.html"><button class="btn-primary">Reserve</button></a>
                 <p class="notice">You won't be charged yet</p>
             </div>
         </div>
+        
     </section>    
 <main class="roombook">
     <section class="amenities-section">
@@ -184,6 +200,12 @@
                     <i class="fas fa-bell-slash"></i> Carbon monoxide alarm
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="map-section">
+        <div id="map-container">
+            <h2>Explore the Area</h2>
+            <div id="map" style="height: 400px; width: 100%;"></div> <!-- Add styles to set map size -->
         </div>
     </section>
     <section class="reviews-section" id="review">
@@ -267,5 +289,6 @@
         <div class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>Kazi Fabiha Liya</span></div>
     </section>
         <script src="/resources/js/script.js" defer></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     </body>
     </html>

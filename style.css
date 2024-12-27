@@ -75,38 +75,38 @@ tr:hover {
 /* modal */
 .modal {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
 }
 
-.close-button {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close-button:hover,
-.close-button:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
 .btn{
     padding: .5rem 8rem;
 }
@@ -447,7 +447,7 @@ form .button input:hover {
   }
   
 .add-listing {
-    background-color: #ff385c;
+    background-color: #E7EFE6;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -485,7 +485,7 @@ form .button input:hover {
 }
 
 .add-listing {
-    background-color: #ff385c;
+    background-color: #E7EFE6;
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -611,7 +611,7 @@ form .button input:hover {
 }
 
 .search-button {
-    background-color: #ff385c;
+    background-color: brown;
     color: #fff;
     border: none;
     border-radius: 2.5rem;
@@ -778,7 +778,7 @@ form .button input:hover {
     align-items: center; 
     text-align: center;
     padding: 50px 0;
-    background-color: #ffefe7;
+    background-color: #FAF3E0;
 }
 
 .service h2 {
@@ -825,7 +825,7 @@ form .button input:hover {
     text-align: center;
     font-size: 2rem;
     padding: 10px;
-    background-color: #DFD5C7;
+    background-color: #f8f3f3;
     color: #333;
 }
 
@@ -868,7 +868,7 @@ form .button input:hover {
 /* Accommodation service */
 
 .services{
-    background-color: var(--light-bg);
+    background-color: #FAF3E0;
 }
 .services .box-container{
     display: grid;
@@ -908,8 +908,20 @@ form .button input:hover {
     flex: 1; /* Occupy less space */
     background-color: #fff;
     align-self: flex-start; /* Align to the top of the container */
+    padding: 5px;
 }
+.reservation-summary-price{
+    gap:5px;
+    flex: 1; /* Occupy less space */
+    background-color: #fff;
+    align-self: flex-start;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.reservation-summary-price p{
+    gap:10px;
 
+}
 .card {
     border-radius: 10px;
     padding: 20px;
@@ -963,6 +975,7 @@ form .button input:hover {
     margin: 20px 0;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
+    gap:5px;
 }
 
 .check-details div {
@@ -1014,12 +1027,13 @@ form .button input:hover {
     border-radius: 10px;
     background-color: #fff;
     padding: 20px;
-    max-width: 600px;
+    max-width: 700px;
     width:90%;
     margin: 0 40px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     align-items: center;
     align-content: center;
+    height: 500px;
 }
 
 .price-summary h3 {
@@ -1178,6 +1192,370 @@ form .button input:hover {
 }
 
 /* am end */
+/* image details adding on MAke Reservation page */
+.shared-room-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.room-image {
+    width: 120px; /* Set a consistent image size */
+    height: auto;
+    border-radius: 8px; /* Add slight rounding */
+    margin: 15px 0; /* Space below the image */
+    margin-right: 30px;
+}
+
+.room-info {
+    text-align: left; /* Center-align the text below the image */
+}
+
+.room-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--brown);
+    margin-top: 5px;
+    align-items: left;
+}
+
+.room-description {
+    font-size: 14px;
+    color: #757575; /* Light gray for the description */
+    margin: 5px 0;
+}
+
+.room-rating {
+    font-size: 14px;
+    color: #444; /* Dark gray for the rating text */
+    margin-top: 5px;
+    align-items: left;
+}
+
+.room-rating span {
+    font-weight: bold;
+    color: #f4b400; /* Gold color for the star */
+}
+.room-details .line{
+    border-top: 1px solid #e0e0e0; /* Light ash */
+    margin: 15px 0; /* Space around the line */
+}
+/* end  */
+/* reservation */
+.make-reservation-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 80px;
+}
+
+/* Header Section */
+.make-reservation-header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 80px;
+}
+
+/* Reservation er back button */
+.reservation-header {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between the back button and title */
+    margin-bottom: 20px; /* Add spacing below the header */
+}
+.back-button-container {
+    margin-bottom: 20px; /* Space below the back button */
+}
+
+.back-button {
+    font-size: 16px;
+    color: var(--black); /* Normal text color */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative; /* For pseudo-element positioning */
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    margin-right:20px;
+}
+
+.back-button:hover {
+    color: var(--white); /* Change text color on hover */
+}
+
+.back-button::before {
+    content: ""; /* Empty circle for hover effect */
+    position: absolute;
+    width: 0; /* Start small */
+    height: 0;
+    background-color: var(--brown); /* Circle color */
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease;
+    z-index: -1; /* Place behind text */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.back-button:hover::before {
+    width: 40px; /* Final circle size */
+    height: 40px;
+}
+
+.make-reservation-page-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--brown);
+    font-family: var(--font-heading);
+}
+
+/* Left Section: Your Trip Details */
+/* Left Section: Your Trip Details */
+.make-reservation-trip-details {
+    flex: 2;
+    font-size: 18px; /* Increase base font size */
+    line-height: 1.8; /* Improve readability */
+    padding: 100px;
+}
+.make-reservation-trip-details h1{
+
+    font-style: bold;
+    color:#4B433A;
+}
+.make-reservation-trip-details .line {
+    border-top: 1px solid #e0e0e0; /* Light ash color */
+    margin: 10px 0; /* Spacing above and below the line */
+}
+
+.make-reservation-trip-section {
+    margin-bottom: 50px; /* Add more spacing between sections */
+}
+
+.make-reservation-trip-section h2 {
+    font-size: 28px; /* Larger heading size */
+    font-weight: bold;
+    margin-bottom: 20px; /* Spacing below the heading */
+    color: #4B433A;
+}
+
+.make-reservation-trip-section p {
+    font-size: 22px; /* Make text size consistent */
+    margin-bottom: 15px; /* Add spacing between rows */
+    color: #4B433A;
+    padding: 20px; 
+}
+
+.make-reservation-trip-section span {
+    font-weight: bold;
+    color: var(--brown);
+}
+
+.make-reservation-trip-section a {
+    color: var(--brown);
+    font-size: 18px; /* Match text size */
+    text-decoration: underline;
+    margin-left: 10px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.make-reservation-trip-section a:hover {
+    color: var(--beige);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Login/Signup Section */
+.make-reservation-auth-section {
+    margin-top: 60px;
+}
+
+.make-reservation-auth-section h2 {
+    font-size: 28px; /* Larger heading for emphasis */
+    font-weight: bold;
+    margin-bottom: 20px; /* Add spacing below heading */
+}
+
+.make-reservation-auth-buttons {
+    display: flex;
+    gap: 30px; /* Increase gap between buttons */
+}
+
+.make-reservation-auth-buttons a {
+    text-decoration: none;
+    padding: 15px 30px; /* Larger button size */
+    background-color: var(--beige);
+    color: var(--brown);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 22px; /* Match button font size with text */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.make-reservation-auth-buttons a:hover {
+    background-color: var(--light-beige);
+}
+
+/* Login/Signup Buttons */
+.make-reservation-auth-section {
+    margin-top: 40px;
+}
+
+.make-reservation-auth-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.make-reservation-auth-buttons a {
+    text-decoration: none;
+    padding: 14px 28px; /* Slightly larger padding for better aesthetics */
+    background-color: #f5f5dc; /* Light beige */
+    color: #6b4f4f; /* Darker brown text for contrast */
+    border: 1px solid #d9d2b6; /* Add a subtle border */
+    border-radius: 8px; /* Slightly more rounded corners */
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px; /* Standard font size for buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect for Light Beige Button */
+.make-reservation-auth-buttons a:hover {
+    background-color: #efe9c6; /* Slightly lighter beige for hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    color: #5a4038; /* Darker shade of brown for text */
+}
+
+/* Reservation page er hidden btn */
+.btn-confirm {
+    padding: 15px 30px;
+    background-color: var(--beige);
+    color: var(--brown);
+    border: 1px solid var(--light-beige);
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-confirm:hover {
+    background-color: var(--light-beige);
+    transform: scale(1.05);
+}
+/* Right Section: Price Details */
+.make-reservation-price-details {
+    flex: 1;
+    position: sticky;
+    top: 40px; /* Adjusts how far the sticky section stays from the top */
+    margin-top: 100px; /* Adds space above the card */
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+
+    /* Flexbox for vertical centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content within the card */
+    height: 600px;
+}
+
+/* Horizontal Line */
+.make-reservation-price-details .price-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 16px;
+}
+.make-reservation-price-details .line {
+    border-top: 1px solid #e0e0e0; /* Light ash color */
+    margin: 10px 0; /* Spacing above and below the line */
+    padding-bottom: 5px;
+}
+.make-reservation-price-details h3 {
+    font-size: 20px;
+    border-bottom: 1px solid var(--beige);
+    padding-bottom: 10px;
+}
+.make-reservation-price-details .price-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.make-reservation-price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.make-reservation-price-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    border-top: 1px solid var(--beige);
+    padding-top: 10px;
+}
+/* Room Details */
+.make-reservation-price-details .room-details {
+    margin-bottom: 20px;
+}
+.make-reservation-price-details span {
+    padding: 10px 0;
+}
+
+.make-reservation-price-details .room-details h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.make-reservation-price-details .room-details p {
+    font-size: 18px;
+    color: #757575;
+    margin: 5px 0;
+}
+
+
+/* end */
+
+.map-section {
+    padding: 60px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#map-container {
+    margin: 0 80px;
+    text-align: center;
+}
+
+#map-container h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4B433A; /* Match the theme color */
+}
+
+#map {
+    height: 400px; /* Adjust height as needed */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Map */
+
+
 /* review */ 
 .review-container{
     margin-top:20px;
